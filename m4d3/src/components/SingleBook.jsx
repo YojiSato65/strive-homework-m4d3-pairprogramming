@@ -9,7 +9,6 @@ const SingleBook = (props) => {
       <Card.Img variant="top" src={props.image} />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-      
       </Card.Body>
     </Card>
   );

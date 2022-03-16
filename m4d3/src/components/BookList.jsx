@@ -1,19 +1,22 @@
 import {Container, Row} from 'react-bootstrap'
-// import { Component } from 'react';
-// import books from '../data/fantasy.json'
 import SingleBook from './SingleBook';
+import {Component} from 'react'
 
-const BookList = (props) => {
-
-    return (
-        <Container>
-            <Row>
-              {books.map(book => (
-                <SingleBook />
-            ))}
-            </Row>
-        </Container>
-    );
+// const BookList = (props) => {
+class BookList extends Component {
+    state = {}
+    render()
+    {
+        return (
+            <Container>
+                <Row>
+                    {this.props.books.map(book => (
+                        <SingleBook title={book.title} image={book.img} key={book.asin} />
+                    ))}
+                </Row>
+            </Container>
+        );
+    }
 }
   
   export default BookList
