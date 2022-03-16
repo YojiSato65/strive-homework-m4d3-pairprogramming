@@ -14,7 +14,7 @@ function App()
       <WarningSign message='Hello, new message!' />
       <MyBadge text='ex.2' color='primary' />
       <SingleBook title={books[0].title} image={books[0].img} />
-      <BookList title={books.title} img={books.img} />
+      <BookList title={books.title} image={books.img} />
     </div>
   );
 }

@@ -1,31 +1,19 @@
-import {Card, Container, Row, Col} from 'react-bootstrap'
-import { Component } from 'react';
-// import SingleBook from './SingleBook'
-import books from '../data/fantasy.json'
+import {Container, Row} from 'react-bootstrap'
+// import { Component } from 'react';
+// import books from '../data/fantasy.json'
+import SingleBook from './SingleBook';
 
-class BookList extends Component {
+const BookList = (props) => {
 
-    state = {
- }
-
-render(){
     return (
         <Container>
             <Row>
               {books.map(book => (
-                <Col className='col-md-3' key={book.asin}>
-                <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={book.img} />
-                <Card.Body>
-                <Card.Title>{book.title}</Card.Title>
-                </Card.Body>
-                </Card>
-                </Col>
+                <SingleBook />
             ))}
             </Row>
         </Container>
     );
-};
 }
   
   export default BookList
