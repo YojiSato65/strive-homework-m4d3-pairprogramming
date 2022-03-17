@@ -1,6 +1,7 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 import { Component } from "react";
+import CommentArea from './CommentArea'
 
 // const BookList = (props) => {
 class BookList extends Component {
@@ -19,13 +20,16 @@ class BookList extends Component {
                 placeholder="Search here"
                 value={this.state.searchQuery}
                 onChange={(e) => this.setState({ searchQuery: e.target.value })}
+                
               />
             </Form.Group>
           </Col>
         </Row>
 
         <Row>
+        
          <>
+         
             {this.props.books
               .filter((book) =>
                 book.title.toLowerCase().includes(this.state.searchQuery)
@@ -33,6 +37,7 @@ class BookList extends Component {
               .map((book) => (
                 <SingleBook title={book.title} image={book.img} key={book.asin} />
               ))}
+              <CommentArea />
          </>
         </Row>
       </Container>

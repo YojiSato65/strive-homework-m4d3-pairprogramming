@@ -5,6 +5,7 @@ import WarningSign from "./components/WarningSign.jsx"
 import MyBadge from "./components/MyBadge"
 import BookList from "./components/BookList"
 import books from "./data/fantasy.json"
+import CommentArea from "./components/CommentArea"
 
 function App()
 {
@@ -13,6 +14,7 @@ function App()
       <WarningSign message='Hello, new message!' />
       <MyBadge text='Ex.2' color='primary' />
       <BookList books={books} />
+      <CommentArea />
     </div>
   );
 }
