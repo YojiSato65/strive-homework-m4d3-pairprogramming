@@ -23,14 +23,17 @@ class BookList extends Component {
             </Form.Group>
           </Col>
         </Row>
+
         <Row>
-          {this.props.books
-            .filter((book) =>
-              book.title.toLowerCase().includes(this.state.searchQuery)
-            )
-            .map((book) => (
-              <SingleBook title={book.title} image={book.img} key={book.asin} />
-            ))}
+         <>
+            {this.props.books
+              .filter((book) =>
+                book.title.toLowerCase().includes(this.state.searchQuery)
+              )
+              .map((book) => (
+                <SingleBook title={book.title} image={book.img} key={book.asin} />
+              ))}
+         </>
         </Row>
       </Container>
     );

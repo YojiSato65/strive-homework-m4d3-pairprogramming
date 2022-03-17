@@ -11,7 +11,7 @@ function App()
   return (
     <div>
       <WarningSign message='Hello, new message!' />
-      <MyBadge text='ex.2' color='primary' />
+      <MyBadge text='Ex.2' color='primary' />
       <BookList books={books} />
     </div>
   );
