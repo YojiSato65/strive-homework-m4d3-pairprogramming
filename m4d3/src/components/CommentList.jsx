@@ -1,15 +1,15 @@
 import { Component } from 'react'
 import SingleComment from './SingleComment'
+import { ListGroup } from 'react-bootstrap'
 
 class CommentList extends Component {
   render() {
     return (
-      <ul>
-        {this.props.comments &&
-          this.props.comments.map((comment) => (
-            <SingleComment comment={comment} />
-          ))}
-      </ul>
+      <ListGroup>
+        {this.props.listComments.map((comment) => (
+          <SingleComment comment={comment} key={comment._id} />
+        ))}
+      </ListGroup>
     )
   }
 }

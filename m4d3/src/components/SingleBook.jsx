@@ -21,9 +21,9 @@ class SingleBook extends Component {
           <Card.Img variant="top" src={this.props.image} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
-            {this.state.selectedBook && <CommentArea />}
           </Card.Body>
         </Card>
+        {this.state.selectedBook && <CommentArea id={this.props.id} />}
       </Col>
     )
   }

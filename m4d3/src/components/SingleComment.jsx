@@ -1,15 +1,7 @@
-import { Component } from 'react'
+import { ListGroup } from 'react-bootstrap'
 
-class SingleComment extends Component {
-  render() {
-    return (
-      <ul>
-        {this.props.books.map((comment) => (
-          <SingleComment />
-        ))}
-      </ul>
-    )
-  }
-}
+const SingleComment = (props) => (
+  <ListGroup.Item>{props.comment.comment}</ListGroup.Item>
+)
 
 export default SingleComment

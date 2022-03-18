@@ -30,7 +30,12 @@ class BookList extends Component {
                 .includes(this.state.searchQuery.toLowerCase()),
             )
             .map((book) => (
-              <SingleBook title={book.title} image={book.img} key={book.asin} />
+              <SingleBook
+                title={book.title}
+                image={book.img}
+                key={book.asin}
+                id={book.asin}
+              />
             ))}
         </Row>
       </Container>
