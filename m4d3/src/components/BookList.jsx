@@ -6,10 +6,11 @@ class BookList extends Component {
   state = {
     searchQuery: '',
   }
+
   render() {
     return (
       <Container>
-        <Row>
+        <Row className="mb-3">
           <Col>
             <Form>
               <Form.Label>Search</Form.Label>
