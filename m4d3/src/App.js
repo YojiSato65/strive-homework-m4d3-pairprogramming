@@ -13,12 +13,12 @@ import { Component } from 'react';
 class App extends Component
 {
   state = {
-    selectedBook: false
+    selectedBook: null,
   }
 
-  clickBook = () =>
+  clickBook = (id) =>
   {
-    this.setState({ selectedBook: !this.state.selectedBook })
+    this.setState({ selectedBook: id })
   }
 
   render()
@@ -29,10 +29,10 @@ class App extends Component
           {/* <WarningSign message='Hello, new message!' /> */}
           {/* <MyBadge text='ex.2' color='primary' /> */}
           <Col md={9}>
-            <BookList books={fantasybooks} value={this.state.selectedBook} clickBook={this.clickBook} />
+            <BookList books={fantasybooks} value={this.state.selectedBook} clickBook={(id) => this.clickBook(id)} />
           </Col>
           <Col md={3}>
-            {<CommentArea id={fantasybooks.asin} />}
+            {<CommentArea id={this.state.selectedBook} />}
           </Col>
         </Row>
       </Container >

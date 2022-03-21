@@ -6,8 +6,19 @@ class AddComment extends Component {
     comment: {
       comment: '',
       rate: 1,
-      elementId: this.props.id,
+      elementId: null,
     },
+  }
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.id !== this.props.id) {
+      this.setState({
+        comment: {
+          ...this.state.comment,
+          elementId: this.props.id,
+        },
+      })
+    }
   }
 
   addComment = async (e) => {
@@ -49,6 +60,7 @@ class AddComment extends Component {
                 comment: {
                   ...this.state.comment,
                   comment: e.target.value,
+                  // elementId: this.props.id,
                 },
               })
             }

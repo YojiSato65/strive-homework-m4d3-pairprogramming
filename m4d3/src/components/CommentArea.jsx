@@ -7,8 +7,10 @@ class CommentArea extends Component {
     comments: [],
   }
 
-  componentDidMount = () => {
-    this.fetchComments()
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.id !== this.props.id) {
+      this.fetchComments()
+    }
   }
 
   fetchComments = async () => {

@@ -36,6 +36,7 @@ class BookList extends Component {
                 image={book.img}
                 key={book.asin}
                 id={book.asin}
+                clickBook={(data) => this.props.clickBook(data)}
               />
             ))}
         </Row>

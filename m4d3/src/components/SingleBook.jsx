@@ -11,7 +11,7 @@ class SingleBook extends Component {
     return (
       <Col className="col-md-3">
         <Card
-          onClick={() => this.props.clickBook()}
+          onClick={() => this.props.clickBook(this.props.id)}
           style={{
             border: this.props.value ? '2px solid green' : 'none',
           }}
