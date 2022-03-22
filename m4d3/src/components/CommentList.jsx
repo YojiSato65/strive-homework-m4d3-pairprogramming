@@ -5,9 +5,9 @@ import { ListGroup } from 'react-bootstrap'
 const CommentList = (listComments) => {
   return (
     <ListGroup>
-      {/* {listComments.map((comment) => (
+      {listComments.map((comment) => (
         <SingleComment comment={comment} key={comment._id} />
-      ))} */}
+      ))}
       {console.log(listComments)}
     </ListGroup>
   )
