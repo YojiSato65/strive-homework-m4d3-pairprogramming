@@ -1,22 +1,31 @@
-import { Component } from 'react'
+// import { Component } from 'react'
+import { useState, useEffect } from 'react'
 import CommentList from './CommentList'
 import AddComment from './AddComment'
 
-class CommentArea extends Component {
-  state = {
-    comments: [],
-  }
+// class CommentArea extends Component
+const CommentArea = ({ id }) => {
+  // state = {
+  //   comments: [],
+  // }
 
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevProps.id !== this.props.id) {
-      this.fetchComments()
-    }
-  }
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (prevProps.id !== this.props.id) {
+  //     this.fetchComments()
+  //   }
+  // }
 
-  fetchComments = async () => {
+  const [comments, setComments] = useState([])
+
+  useEffect(() => {
+    fetchComments()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id])
+
+  const fetchComments = async () => {
     try {
       const response = await fetch(
-        'https://striveschool-api.herokuapp.com/api/comments/' + this.props.id,
+        'https://striveschool-api.herokuapp.com/api/comments/' + id,
         {
           headers: {
             Authorization:
@@ -27,21 +36,19 @@ class CommentArea extends Component {
       if (response.ok) {
         const data = await response.json()
         console.log(data)
-        this.setState({ comments: data })
+        setComments(data)
       }
     } catch (error) {
       console.log(error)
     }
   }
 
-  render() {
-    return (
-      <>
-        <CommentList listComments={this.state.comments} />
-        <AddComment id={this.props.id} />
-      </>
-    )
-  }
+  return (
+    <>
+      <CommentList listComments={comments} />
+      <AddComment id={id} />
+    </>
+  )
 }
 
 export default CommentArea
